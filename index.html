@@ -398,14 +398,9 @@ $('#10').html(urls[9]);
     }
  document.getElementById('nextsong').onclick = function() {
 currentVideoId=currentVideoId+1
-        	 if ((currentVideoId) < ytids.length) {
-                player.loadVideoById(ytids[currentVideoId]);
-						 alert("am at if")
+player.loadVideoById(ytids[currentVideoId]);
+						
 					 }
-						 else{
-							 player.loadVideoById(ytids[currentVideoId-1]);
-							 alert("am at else")
-						 }}
 
 </script>
 
