@@ -71,7 +71,7 @@ padding: 6px 6px 6px 32px;
   margin-left: 200px; /* Same as the width of the sidenav */
 }
 .playerr{
-    float: left;
+    float: right;
 }
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
@@ -331,10 +331,10 @@ $('#10').html(urls[9]);
 //next song
 var player, currentVideoId = 0;
 
-function onYouTubeIframeAPIReady() {
+    function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-            height: '500',
-            width: '500',
+            height: '200',
+            width: '200',
 					  playerVars: {
       				autoplay: 1,        // Auto-play the video on load
       				controls: 1,        // Show pause/play buttons in player
@@ -352,7 +352,6 @@ function onYouTubeIframeAPIReady() {
             }
         });
         document.getElementById('res').onclick = function() {
-        	alert("am here bro")
         player.playVideo();
     };
     document.getElementById('pause').onclick = function() {
@@ -397,18 +396,16 @@ $('#10').html(urls[9]);
             }
         }
     }
-
  document.getElementById('nextsong').onclick = function() {
 currentVideoId=currentVideoId+1
         	 if ((currentVideoId) < ytids.length) {
                 player.loadVideoById(ytids[currentVideoId]);
-						 alert("am at if")
+						
 					 }
 						 else{
 							 player.loadVideoById(ytids[currentVideoId-1]);
-							 alert("am at else")
+							
 						 }}
-
 </script>
 
 	<body>
