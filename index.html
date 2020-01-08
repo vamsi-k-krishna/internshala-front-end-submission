@@ -396,16 +396,17 @@ $('#10').html(urls[9]);
             }
         }
     }
- document.getElementById('nextsong').onclick = function() {
+$('#nextsong').onclick = function(){
 currentVideoId=currentVideoId+1
         	 if ((currentVideoId) < ytids.length) {
                 player.loadVideoById(ytids[currentVideoId]);
-			 alert("at if")
+		alert("at if")
 						
 					 }
-						 else{
-							 player.loadVideoById(ytids[currentVideoId-1]);
-							alert("at else")	
+		else{
+			currentVideoId=currentVideoId-1
+			player.loadVideoById(ytids[currentVideoId]);
+			alert("at else")	
 						 }}
 </script>
 
