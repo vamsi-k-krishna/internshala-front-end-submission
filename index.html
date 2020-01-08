@@ -400,11 +400,12 @@ $('#10').html(urls[9]);
 currentVideoId=currentVideoId+1
         	 if ((currentVideoId) < ytids.length) {
                 player.loadVideoById(ytids[currentVideoId]);
+			 alert("at if")
 						
 					 }
 						 else{
 							 player.loadVideoById(ytids[currentVideoId-1]);
-							
+							alert("at else")	
 						 }}
 </script>
 
