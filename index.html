@@ -357,6 +357,12 @@ var player, currentVideoId = 0;
     document.getElementById('pause').onclick = function() {
         player.pauseVideo();
     };
+	     document.getElementById('nextsong').onclick = function() {
+currentVideoId=currentVideoId+1
+		player.pauseVideo();     
+player.loadVideoById(ytids[currentVideoId]);
+						
+					 }
 		
 		}
 
@@ -396,11 +402,7 @@ $('#10').html(urls[9]);
             }
         }
     }
- document.getElementById('nextsong').onclick = function() {
-currentVideoId=currentVideoId+1
-player.loadVideoById(ytids[currentVideoId]);
-						
-					 }
+
 
 </script>
 
