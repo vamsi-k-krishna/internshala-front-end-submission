@@ -279,8 +279,8 @@ function getButtons(prevPageToken, nextPageToken)
 
     return btnoutput;
 }
-var urls = ["https://www.youtube.com/watch?v=rUWxSEwctFU"];
-var ytids=["rUWxSEwctFU"];
+var urls = ["https://www.youtube.com/watch?v=zkvNnRjIhPE"];
+var ytids=["zkvNnRjIhPE"];
 //clicking on add url button
 function addurll(){
 //assigning a name as newurl
@@ -365,42 +365,27 @@ var player, currentVideoId = 0;
 
     function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.ENDED) {
-					
-
-            ytids.shift();
-					urls.shift();
-									  if (currentVideoId < ytids.length) {
-                player.loadVideoById(ytids[currentVideoId]);
-					$('#1').html(urls[0]);
-$("#1").attr("href",urls[0]);
-$('#2').html(urls[1]);
-$("#2").attr("href",urls[1]);
-$('#3').html(urls[2]);
-$("#3").attr("href",urls[2]);
-$('#4').html(urls[3]);	
-$("#4").attr("href",urls[3]);
-$('#5').html(urls[4]);
-$("#5").attr("href",urls[4]);
-$('#6').html(urls[5]);
-$("#6").attr("href",urls[5]);
-	$('#7').html(urls[6]);
-$("#7").attr("href",urls[6]);
-	$('#8').html(urls[7]);	
-$("#8").attr("href",urls[7]);
-	$('#9').html(urls[8]);
-	$("#9").attr("href",urls[8]);
-$('#10').html(urls[9]);
-	$("#1").attr("href",urls[9]);
-
-            }
+					nextsong();
         }
     }
 function nextsong() {
 currentVideoId=currentVideoId+1
         	 if ((currentVideoId) < ytids.length) {
-                player.loadVideoById(ytids[currentVideoId]);
-						
-					 }
+              urls.shift()
+						 ytids.shift()
+						var x, i,j;
+  x = document.querySelectorAll(".example");
+  for (i = 0; i < (urls.length-1); i++) {
+    x[i].href=urls[i];
+    x[i].innerHTML =urls[i];
+  }
+					 for(j=urls.length;j<x.length;j++){
+						 x[j].innerHTML= "ADD A LINK HERE";
+						 x[j].href="#";
+					 }   
+						 player.loadVideoById(ytids[currentVideoId]);
+						 currentVideoId=currentVideoId-1;
+						}
 						 else{
 							 player.loadVideoById(ytids[currentVideoId-1]);
 						
