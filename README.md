@@ -7,4 +7,14 @@ The project helps in searching a youtube video ..pasiting the url to add it to p
 ..auto update of playlist as soon as the audio is played and moving to the next song until the playlist is finished..
 
 made with pure JavaScript, HTML and CSS.
+
+do see my portfolio : https://kvamsi.me
+
+the above project demo can be seen at : https://kvamsi.me/internshala-front-end-submission/
+github page : https://vamsi-k-krishna.github.io/internshala-front-end-submission/
+
+contact info -
+email : texttovamsi@gmail.com (personal mail)
+        9916005194@klu.ac.in  (student email)
+         
  
