@@ -4,82 +4,6 @@
 </head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-<style>
-
-body {
-  font-family: "Lato", sans-serif;
-	background-color:black;
-}
-/*adding url and youtube search */
-#query{
-	  border-radius: 30px 0 0 30px;
-	width :250px;
-}
-#url{
-	  border-radius: 30px 0 0 30px;
-	width :250px;
-}
-#search-btn {
-  border: 1px;
-}
-#addbtn {
-  border: 1px;
-}
-.bro{
-	padding: 50px 60px 0px 80px;
-}
-.searchbutton,.addurlhere,.playbutton {
-  cursor:pointer;
-  border-radius: 0 30px 30px 0px;
-  background-color:#fff;
-  color:#669;
-}
-/* ending url and youtube serach */
-/* navmbar starts */
-.sidenav {
-  height: 100%;
-  width: 350px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  right:0;
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
-.sidenav h1{
-padding: 6px 6px 6px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  }
-  
-.sidenav a {
-  padding: 6px 6px 6px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.main {
-  margin-left: 200px; /* Same as the width of the sidenav */
-}
-.playerr{
-    float: right;
-}
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-/*nav bar ends*/
-
-	</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -110,7 +34,7 @@ function search()
             part: 'snippet, id',
             q: q,
             type: 'video',
-            key: 'AIzaSyAJHuTWgtwzE6gGMpjYk9APltQB4Js-iXw'
+            key: 'AIzaSyDAfNPJKuq6Cy2bkm3SIXJOL4RHLpEJGJs'
         },
         function(data)
         {
@@ -158,7 +82,7 @@ function nextPage()
             q: q,
             pageToken: token,
             type: 'video',
-            key: 'AIzaSyAJHuTWgtwzE6gGMpjYk9APltQB4Js-iXw'
+            key: 'AIzaSyDAfNPJKuq6Cy2bkm3SIXJOL4RHLpEJGJs'
         },
         function(data)
         {
@@ -206,7 +130,7 @@ function prevPage()
             q: q,
             pageToken: token,
             type: 'video',
-            key: 'AIzaSyAJHuTWgtwzE6gGMpjYk9APltQB4Js-iXw'
+            key: 'AIzaSyDAfNPJKuq6Cy2bkm3SIXJOL4RHLpEJGJs'
         },
         function(data)
         {
@@ -331,8 +255,8 @@ var player, currentVideoId = 0;
 
     function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-            height: '500',
-            width: '500',
+            height: '200',
+            width: '200',
 					  playerVars: {
       				autoplay: 1,        // Auto-play the video on load
       				controls: 1,        // Show pause/play buttons in player
@@ -370,6 +294,7 @@ var player, currentVideoId = 0;
 function nextsong() {
 currentVideoId=currentVideoId+1
         	 if ((currentVideoId) < ytids.length) {
+						  player.loadVideoById(ytids[currentVideoId]);
               urls.shift()
 						 ytids.shift()
 						var x, i,j;
@@ -382,16 +307,91 @@ currentVideoId=currentVideoId+1
 						 x[j].innerHTML= "ADD A LINK HERE";
 						 x[j].href="#";
 					 }   
-						 player.loadVideoById(ytids[currentVideoId]);
+						
 						 currentVideoId=currentVideoId-1;
 						}
 						 else{
 							 player.loadVideoById(ytids[currentVideoId-1]);
-						
+							 
 						 }}
 
 </script>
+<style>
 
+body {
+  font-family: "Lato", sans-serif;
+	background-color:black;
+}
+/*adding url and youtube search */
+#query{
+	  border-radius: 30px 0 0 30px;
+	width :250px;
+}
+#url{
+	  border-radius: 30px 0 0 30px;
+	width :250px;
+}
+#search-btn {
+  border: 1px;
+}
+#addbtn {
+  border: 1px;
+}
+.bro{
+	padding: 50px 60px 0px 80px;
+}
+.searchbutton,.addurlhere,.playbutton {
+  cursor:pointer;
+  border-radius: 0 30px 30px 0px;
+  background-color:#fff;
+  color:#669;
+}
+/* ending url and youtube serach */
+/* navmbar starts */
+.sidenav {
+  height: 100%;
+  width: 350px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right:0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.sidenav h1{
+padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  }
+  
+.sidenav a {
+  padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+}
+.playerr{
+    float: right;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+/*nav bar ends*/
+
+	</style>
 	<body>
 <div id="player" class="playerr"></div>
 
@@ -399,24 +399,28 @@ currentVideoId=currentVideoId+1
 			<h1 style="color:white;padding:30px 300px 0px">Use play and pause to start or resume the video</h1>
 			<h1 style="color:white;padding:30px 300px 0px">search youtube bar to search the video</h1>
 			<h1 style="color:white;padding:30px 300px 0px">add url to add it to the playlist</h1>
-		<h1 style="color:white;padding:30px 300px 0px">if song is played completely it will be removed from playlist. If next song is given it will not be removed</h1>
+		<h1 style="color:white;padding:30px 300px 0px">Refresh the page if playlist is finished or if no more next songs</h1>
 		<div style="padding:30px">
+		<center>
+
+			</center>
 		</div>
 
 	
 	<!-- start of side bar-->
 <div class="sidenav" id="newurls">
 	<h1> PLAYLISTS </h1>
-	<a id ="1" href="#" target=_blank> ADD A LINK THERE</a>
-	<a id ="2" href="#" target=_blank>ADD A LINK THERE</a>
-	<a id ="3" href="#" target=_blank>ADD A LINK THERE</a>
-	<a id ="4" href="#" target=_blank>ADD A LINK THERE</a>
-	<a id ="5" href="#" target=_blank>ADD A LINK THERE</a>
-	<a id ="6" href="#" target=_blank>ADD A LINK THERE</a>
-	<a id ="7" href="#" target=_blank>ADD A LINK THERE</a>
-	<a id ="8" href="#" target=_blank>ADD A LINK THERE</a>
-	<a id ="9" href="#" target=_blank>ADD A LINK THERE</a>
-	<a id ="10" href="#" target=_blank>ADD A FINAL LINK THERE</a>
+	<a id ="1" class="example" href="#" target=_blank> ADD A LINK THERE</a>
+	<a id ="2" class="example" href="#" target=_blank>ADD A LINK THERE</a>
+	<a id ="3" class="example" href="#" target=_blank>ADD A LINK THERE</a>
+	<a id ="4" class="example" href="#" target=_blank>ADD A LINK THERE</a>
+	<a id ="5" class="example" href="#" target=_blank>ADD A LINK THERE</a>
+	<a id ="6" class="example" href="#" target=_blank>ADD A LINK THERE</a>
+	<a id ="7" class="example" href="#" target=_blank>ADD A LINK THERE</a>
+	<a id ="8" class="example" href="#" target=_blank>ADD A LINK THERE</a>
+	<a id ="9" class="example" href="#" target=_blank>ADD A LINK THERE</a>
+	<a id ="10"class="example" href="#" target=_blank>ADD A FINAL LINK THERE</a> 
+
 </div>
 <!-- end of side bar-->
 	<!-- start of youtube search bar-->
@@ -442,6 +446,7 @@ currentVideoId=currentVideoId+1
 						<button><a href="#" id="res"  style="text-decoration:none">Play</a></button>
 			<button><a href="#" id="pause" style="text-decoration:none">Pause</a></button>
 			<button type="submit" name="song-btn" id="song-btn" class="songbtn"><a href="#" id="nextsong" onclick="nextsong()"  style="text-decoration:none">Next song</a></button>
+		
 		</div>
 		</div>
 	<!-- end of add url bar-->
